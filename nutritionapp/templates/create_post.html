@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">{{ legend }}</legend>
+            <div class="form-group">
+                {{ form.title.label(class="form-control-label") }}
+                {% if form.title.errors %}
+                    {{ form.title(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.title.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.title(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.start_date.label(class="form-control-label") }}
+                {% if form.start_date.errors %}
+                    {{ form.start_date(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.start_date.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.start_date(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.body_weight.label(class="form-control-label") }}
+                {% if form.body_weight.errors %}
+                    {{ form.body_weight(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.body_weight.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.body_weight(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.tdee.label(class="form-control-label") }}
+                {% if form.tdee.errors %}
+                    {{ form.tdee(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.tdee.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.tdee(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  Week #
+                </div>
+                <div class="col-sm">
+                  BW
+                </div>
+                <div class="col-sm">
+                    Calories
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-sm">
+                  <p>1</p>
+                  <p>2</p>
+                  <p>3</p>
+                  <p>4</p>
+                  <p>5</p>
+                  <p>6</p>
+                  <p>7</p>
+                  <p>8</p>
+                </div>
+                <div class="col-sm">
+                  {{ form.weekly_bw1(class="form-control form-control-lg") }}
+                  {{ form.weekly_bw2(class="form-control form-control-lg") }}
+                  {{ form.weekly_bw3(class="form-control form-control-lg") }}
+                  {{ form.weekly_bw4(class="form-control form-control-lg") }}
+                  {{ form.weekly_bw5(class="form-control form-control-lg") }}
+                  {{ form.weekly_bw6(class="form-control form-control-lg") }}
+                  {{ form.weekly_bw7(class="form-control form-control-lg") }}
+                  {{ form.weekly_bw8(class="form-control form-control-lg") }}
+                </div>
+                <div class="col-sm">
+                  {{ form.weekly_calories1(class="form-control form-control-lg") }}
+                  {{ form.weekly_calories2(class="form-control form-control-lg") }}
+                  {{ form.weekly_calories3(class="form-control form-control-lg") }}
+                  {{ form.weekly_calories4(class="form-control form-control-lg") }}
+                  {{ form.weekly_calories5(class="form-control form-control-lg") }}
+                  {{ form.weekly_calories6(class="form-control form-control-lg") }}
+                  {{ form.weekly_calories7(class="form-control form-control-lg") }}
+                  {{ form.weekly_calories8(class="form-control form-control-lg") }}
+                </div>
+              </div>
+              
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock content %}
